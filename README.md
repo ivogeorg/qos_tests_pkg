@@ -45,3 +45,7 @@
    [pub_custom_min_qos_node-2] [INFO] [1723506481.174786918] [publisher_qos_obj]: Publishing: 3:1723506481.174754,1723506481174754290
    [pub_custom_min_qos_node-2] [INFO] [1723506482.174798262] [publisher_qos_obj]: Publishing: 4:1723506482.174758,1723506482174757744
    ```
+
+#### Compatibility table
+
+![QoS compatibility table](assets/table_qos_compatibility.png)  
