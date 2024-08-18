@@ -2,7 +2,7 @@
 
 #### Compatible QoS in pub and sub
 
-1. Declare DDS explicitly (**RMW** means **ROS** Middleware interface)
+1. Declare DDS (**D**ata **D**istribution **S**ervice) explicitly (**RMW** means **R**OS **M**iddle**w**are interface)
    `export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp`
 2. A Python [launch file](launch/pub_sub_min_qos.launch.py) has been setup with the `reliablity` argument for pub
    `ros2 launch qos_tests_pkg pub_sub_min_qos.launch.py`
