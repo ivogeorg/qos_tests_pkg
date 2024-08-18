@@ -76,12 +76,28 @@ Notice RMW!
       ```
       ros2 run qos_run_pkg subscriber_durability_exe -durability transient_local
       ```
-   3. `ros2 topic echo`
+   3. `ros2 topic echo` (until Galactic, also set `--qos-reliability`, solved after Galactic)
       ```
       user:~$ ros2 topic echo --qos-
       --qos-depth        --qos-durability   --qos-history      --qos-profile      --qos-reliability
       user:~$ ros2 topic echo --qos-durability transient_local --qos-reliability reliable /qos_test
       data: 0:1724022654.720181,1724022654720181104
+
+##### 2. Deadline
+
+1. **TL;DR**: Maximum time between published messages
+2. Run:
+   1. Publisher
+      ```
+      ros2 run qos_tests_pkg publisher_deadline_exe -deadline 10.0
+      ```
+   2. Subscriber
+      ```
+      ros2 run qos_tests_pkg subscriber_durability_exe -durability 10.0
+      ```
+3. Notes:
+   1. Vary the deadline arguments to see what happens.
+   2. Single-threaded execution (the default) causes the deadline callback to be executed AFTER the timer callback.
 
 
 
