@@ -2,9 +2,12 @@
 
 #### ROS2 architecture overview
 
-| Overview | Client library |
-| --- | --- |
-| ![Overview](assets/ros-architecture.jpg) | ![Client library](assets/ros_client_library_api_stack.png) |
+##### 1. Overview
+Notice RMW!  
+![Overview](assets/ros-architecture.jpg)  
+
+##### 2. Client library
+![Client library](assets/ros_client_library_api_stack.png)  
 
 #### Compatible QoS in pub and sub
 
