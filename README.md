@@ -58,3 +58,33 @@ Notice RMW!
 #### Compatibility table
 
 ![QoS compatibility table](assets/table_qos_compatibility.png)  
+
+#### QoS policies
+
+##### 1. Durability
+
+1. **TL;DR**: Whether subscribers can see a message published before they subscribed.  
+2. Values:
+   1. `transient_local`
+   2. `volatile` (default)
+3. Run:
+   1. Publisher
+      ```
+      ros2 run qos_run_pkg publisher_durability_exe -durability transient_local
+      ```
+   2. Subscriber
+      ```
+      ros2 run qos_run_pkg subscriber_durability_exe -durability transient_local
+      ```
+   3. `ros2 topic echo`
+      ```
+      user:~$ ros2 topic echo --qos-
+      --qos-depth        --qos-durability   --qos-history      --qos-profile      --qos-reliability
+      user:~$ ros2 topic echo --qos-durability transient_local --qos-reliability reliable /qos_test
+      data: 0:1724022654.720181,1724022654720181104
+
+
+
+
+
+

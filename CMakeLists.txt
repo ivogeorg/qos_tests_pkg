@@ -23,13 +23,19 @@ endif()
 
 add_executable(pub_custom_min_qos_node src/publisher_custom_minimal_qos.cpp)
 ament_target_dependencies(pub_custom_min_qos_node rclcpp std_msgs)
-
 add_executable(sub_custom_min_qos_node src/subscriber_custom_minimal_qos.cpp)
 ament_target_dependencies(sub_custom_min_qos_node rclcpp std_msgs)
+
+add_executable(subscriber_durability_exe src/subscriber_durability.cpp)
+ament_target_dependencies(subscriber_durability_exe rclcpp)
+add_executable(publisher_durability_exe src/publisher_durability.cpp)
+ament_target_dependencies(publisher_durability_exe rclcpp)
 
 install(TARGETS 
 		pub_custom_min_qos_node
 		sub_custom_min_qos_node
+		subscriber_durability_exe
+		publisher_durability_exe
 		DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY
