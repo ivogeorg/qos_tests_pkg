@@ -1,5 +1,11 @@
 ### `qos_tests_pkg`
 
+#### ROS2 architecture overview
+
+| Overview | Client library |
+| --- | --- |
+| ![Overview](assets/ros-architecture.jpg) | ![Client library](assets/ros_client_library_api_stack.png) |
+
 #### Compatible QoS in pub and sub
 
 1. Declare DDS (**D**ata **D**istribution **S**ervice) explicitly (**RMW** means **R**OS **M**iddle**w**are interface)
