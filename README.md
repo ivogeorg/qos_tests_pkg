@@ -99,7 +99,22 @@ Notice RMW!
    1. Vary the deadline arguments to see what happens.
    2. Single-threaded execution (the default) causes the deadline callback to be executed AFTER the timer callback.
 
+##### 3. Lifespan
 
+1. **TL;DR**: Time between publication and subscription. If a message arrives at the subscriber after the publisher's lifespan, it is considered _obsolete_ and not processed.
+2. Run:
+   1. Publisher
+   ```
+   ros2 run qos_tests_pkg publisher_lifespan_exe -lifespan 20.0
+   ```
+   2. Subscriber
+   ```
+   ros2 run qos_tests_pkg subscriber_lifespan_exe -lifespan 1.0
+   ```
+3. Notes:
+   1. To set (and guarantee) a _lifespan_ policy, need to also set _reliability_ to `reliable` and _durability_ to `transient_local`.
+   2. Subscriber needs to be started first or within the publisher's lifespan.
+   3. Vary the times to see the different cases.
 
 
 
