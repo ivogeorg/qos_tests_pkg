@@ -116,6 +116,16 @@ Notice RMW!
    2. Subscriber needs to be started first or within the publisher's lifespan.
    3. Vary the times to see the different cases.
 
+##### 4. Liveliness & Lease Duration
+
+1. **TL;DR**: Liveliness indicates if a publisher is alive. Lease Duration is a period in which a publisher should publish a message or otherwise indicate that it is alive.
+2. Values:
+   1. `MANUAL_BY_TOPIC`
+   2. `AUTOMATIC`
+3. Run
+4. Notes
+   1. **Important**: `MutuallyExclusive` callback groups are used, one each for the two regular callbacks (`pub_callback` and `alive_callback`) because only one instance of each callback should be executed. With `Reentrant` callback groups, multiple instances of the callbacks would be executed simultaneously.
+
 
 
 

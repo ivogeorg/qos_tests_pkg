@@ -45,6 +45,11 @@ ament_target_dependencies(subscriber_lifespan_exe rclcpp)
 add_executable(publisher_lifespan_exe src/publisher_lifespan.cpp)
 ament_target_dependencies(publisher_lifespan_exe rclcpp)
 
+# liveliness & liveliness_lease_duration
+add_executable(publisher_liveliness_exe src/publisher_liveliness.cpp)
+ament_target_dependencies(publisher_liveliness_exe rclcpp)
+add_executable(subscriber_liveliness_exe src/subscriber_liveliness.cpp)
+ament_target_dependencies(subscriber_liveliness_exe rclcpp)
 
 install(TARGETS 
 		pub_custom_min_qos_node
@@ -55,6 +60,8 @@ install(TARGETS
 		publisher_deadline_exe
 		subscriber_lifespan_exe
 		publisher_lifespan_exe
+		publisher_liveliness_exe
+		subscriber_liveliness_exe
 		DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY
